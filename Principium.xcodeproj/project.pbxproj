@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6BF7334378FA18F012B22A /* libPods-Principium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D58C70ED6E887FBB7E1128 /* libPods-Principium.a */; };
 		BE05D82B1E74A08500159A80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D82A1E74A08500159A80 /* main.m */; };
 		BE05D82E1E74A08500159A80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D82D1E74A08500159A80 /* AppDelegate.m */; };
 		BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8301E74A08500159A80 /* MEHScanViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74D58C70ED6E887FBB7E1128 /* libPods-Principium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Principium.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F70C0BEE0FB76D96424BAC /* Pods-Principium.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Principium.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Principium/Pods-Principium.debug.xcconfig"; sourceTree = "<group>"; };
 		BE05D8261E74A08500159A80 /* Principium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Principium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE05D82A1E74A08500159A80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE05D82C1E74A08500159A80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,6 +30,7 @@
 		BE05D83A1E74A08500159A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE05D8401E74B6F900159A80 /* UIColor+ColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorPalette.h"; sourceTree = "<group>"; };
 		BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorPalette.m"; sourceTree = "<group>"; };
+		E5C246CE09A111F22E5FD416 /* Pods-Principium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Principium.release.xcconfig"; path = "Pods/Target Support Files/Pods-Principium/Pods-Principium.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,17 +38,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6BF7334378FA18F012B22A /* libPods-Principium.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E899D3525CC5208A3C6FF8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85F70C0BEE0FB76D96424BAC /* Pods-Principium.debug.xcconfig */,
+				E5C246CE09A111F22E5FD416 /* Pods-Principium.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE05D81D1E74A08500159A80 = {
 			isa = PBXGroup;
 			children = (
 				BE05D8281E74A08500159A80 /* Principium */,
 				BE05D8271E74A08500159A80 /* Products */,
+				0E899D3525CC5208A3C6FF8C /* Pods */,
+				E33516600C453501483221EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +75,10 @@
 		BE05D8281E74A08500159A80 /* Principium */ = {
 			isa = PBXGroup;
 			children = (
-				BE05D8401E74B6F900159A80 /* UIColor+ColorPalette.h */,
-				BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */,
 				BE05D82C1E74A08500159A80 /* AppDelegate.h */,
 				BE05D82D1E74A08500159A80 /* AppDelegate.m */,
-				BE05D82F1E74A08500159A80 /* MEHScanViewController.h */,
-				BE05D8301E74A08500159A80 /* MEHScanViewController.m */,
+				BE05D8431E74B8B300159A80 /* ViewControllers */,
+				BE05D8441E74B8BD00159A80 /* Utilities */,
 				BE05D8351E74A08500159A80 /* Assets.xcassets */,
 				BE05D8371E74A08500159A80 /* LaunchScreen.storyboard */,
 				BE05D83A1E74A08500159A80 /* Info.plist */,
@@ -81,6 +95,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BE05D8431E74B8B300159A80 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE05D82F1E74A08500159A80 /* MEHScanViewController.h */,
+				BE05D8301E74A08500159A80 /* MEHScanViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BE05D8441E74B8BD00159A80 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BE05D8401E74B6F900159A80 /* UIColor+ColorPalette.h */,
+				BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E33516600C453501483221EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74D58C70ED6E887FBB7E1128 /* libPods-Principium.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE05D83D1E74A08600159A80 /* Build configuration list for PBXNativeTarget "Principium" */;
 			buildPhases = (
+				A1CAFAF21295D838D6E2EC80 /* [CP] Check Pods Manifest.lock */,
 				BE05D8221E74A08500159A80 /* Sources */,
 				BE05D8231E74A08500159A80 /* Frameworks */,
 				BE05D8241E74A08500159A80 /* Resources */,
+				B8738431DA9851EEEDC36A58 /* [CP] Embed Pods Frameworks */,
+				EE6BF53054560BC52822CAF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +189,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A1CAFAF21295D838D6E2EC80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8738431DA9851EEEDC36A58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Principium/Pods-Principium-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE6BF53054560BC52822CAF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Principium/Pods-Principium-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE05D8221E74A08500159A80 /* Sources */ = {
@@ -263,6 +354,7 @@
 		};
 		BE05D83E1E74A08600159A80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85F70C0BEE0FB76D96424BAC /* Pods-Principium.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3R5J785EXT;
@@ -276,6 +368,7 @@
 		};
 		BE05D83F1E74A08600159A80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5C246CE09A111F22E5FD416 /* Pods-Principium.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3R5J785EXT;
