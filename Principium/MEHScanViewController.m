@@ -23,28 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureNavBar];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    self.title = @"Scan a QR code.";
     [self startReading];
 }
 
--(void)configureNavBar {
-    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Cancel"
-                                   style:UIBarButtonItemStylePlain
-                                   target:self
-                                   action:@selector(dismissView:)];
-    
-    [flipButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                        [UIFont fontWithName:@"AvenirNext-Regular" size:18.0], NSFontAttributeName,
-                                        [UIColor blackColor], NSForegroundColorAttributeName,
-                                        nil] forState:UIControlStateNormal];
-    
-    self.navigationItem.leftBarButtonItem = flipButton;
-}
+
 
 -(void)startReading {
     NSError *error;
@@ -62,7 +47,7 @@
     AVCaptureMetadataOutput *captureMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
     [_captureSession addOutput:captureMetadataOutput];
     dispatch_queue_t dispatchQueue;
-    dispatchQueue = dispatch_queue_create("myQueue", NULL);
+    dispatchQueue = dispatch_queue_create("com.principium.qr_code", NULL);
     [captureMetadataOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
     [captureMetadataOutput setMetadataObjectTypes:[NSArray arrayWithObject:AVMetadataObjectTypeQRCode]];
     _videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];

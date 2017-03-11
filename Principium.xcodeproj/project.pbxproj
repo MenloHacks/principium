@@ -12,6 +12,7 @@
 		BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8301E74A08500159A80 /* MEHScanViewController.m */; };
 		BE05D8361E74A08500159A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8351E74A08500159A80 /* Assets.xcassets */; };
 		BE05D8391E74A08500159A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8371E74A08500159A80 /* LaunchScreen.storyboard */; };
+		BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		BE05D8351E74A08500159A80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE05D8381E74A08500159A80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE05D83A1E74A08500159A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE05D8401E74B6F900159A80 /* UIColor+ColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorPalette.h"; sourceTree = "<group>"; };
+		BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorPalette.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,8 @@
 		BE05D8281E74A08500159A80 /* Principium */ = {
 			isa = PBXGroup;
 			children = (
+				BE05D8401E74B6F900159A80 /* UIColor+ColorPalette.h */,
+				BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */,
 				BE05D82C1E74A08500159A80 /* AppDelegate.h */,
 				BE05D82D1E74A08500159A80 /* AppDelegate.m */,
 				BE05D82F1E74A08500159A80 /* MEHScanViewController.h */,
@@ -150,6 +155,7 @@
 				BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */,
 				BE05D82E1E74A08500159A80 /* AppDelegate.m in Sources */,
 				BE05D82B1E74A08500159A80 /* main.m in Sources */,
+				BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +267,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3R5J785EXT;
 				INFOPLIST_FILE = Principium/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.menlohacks.Principium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,6 +280,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3R5J785EXT;
 				INFOPLIST_FILE = Principium/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.menlohacks.Principium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
