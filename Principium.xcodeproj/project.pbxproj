@@ -15,6 +15,9 @@
 		BE05D8391E74A08500159A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8371E74A08500159A80 /* LaunchScreen.storyboard */; };
 		BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */; };
 		BE6137B81E75CDC300B94D6D /* MEHUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */; };
+		BE6137BB1E75CE3B00B94D6D /* MEHManualEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137BA1E75CE3B00B94D6D /* MEHManualEntryViewController.m */; };
+		BE6137BE1E75D0EB00B94D6D /* AutolayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137BD1E75D0EB00B94D6D /* AutolayoutHelper.m */; };
+		BE6137C11E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137C01E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m */; };
 		BEB8DABB1E74B9FD008126FA /* MEHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */; };
 		BEB8DABE1E74C6F6008126FA /* MEHCheckInStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */; };
 		BEB8DAC31E74C722008126FA /* MEHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DAC21E74C722008126FA /* MEHUser.m */; };
@@ -36,6 +39,12 @@
 		BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorPalette.m"; sourceTree = "<group>"; };
 		BE6137B61E75CDC300B94D6D /* MEHUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHUserViewController.h; sourceTree = "<group>"; };
 		BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHUserViewController.m; sourceTree = "<group>"; };
+		BE6137B91E75CE3B00B94D6D /* MEHManualEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHManualEntryViewController.h; sourceTree = "<group>"; };
+		BE6137BA1E75CE3B00B94D6D /* MEHManualEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHManualEntryViewController.m; sourceTree = "<group>"; };
+		BE6137BC1E75D0E400B94D6D /* AutolayoutHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutolayoutHelper.h; sourceTree = "<group>"; };
+		BE6137BD1E75D0EB00B94D6D /* AutolayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutolayoutHelper.m; sourceTree = "<group>"; };
+		BE6137BF1E75D18100B94D6D /* UIFontDescriptor+AvenirNext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFontDescriptor+AvenirNext.h"; sourceTree = "<group>"; };
+		BE6137C01E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFontDescriptor+AvenirNext.m"; sourceTree = "<group>"; };
 		BEB8DAB91E74B9FD008126FA /* MEHHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHHTTPSessionManager.h; sourceTree = "<group>"; };
 		BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHHTTPSessionManager.m; sourceTree = "<group>"; };
 		BEB8DABC1E74C6F6008126FA /* MEHCheckInStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHCheckInStoreController.h; sourceTree = "<group>"; };
@@ -88,6 +97,10 @@
 		BE05D8281E74A08500159A80 /* Principium */ = {
 			isa = PBXGroup;
 			children = (
+				BE6137BC1E75D0E400B94D6D /* AutolayoutHelper.h */,
+				BE6137BD1E75D0EB00B94D6D /* AutolayoutHelper.m */,
+				BE6137BF1E75D18100B94D6D /* UIFontDescriptor+AvenirNext.h */,
+				BE6137C01E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m */,
 				BEB8DAC41E74C725008126FA /* Model */,
 				BEB8DABF1E74C6FB008126FA /* Networking */,
 				BEB8DAC01E74C703008126FA /* StoreController */,
@@ -116,6 +129,8 @@
 			children = (
 				BE6137B61E75CDC300B94D6D /* MEHUserViewController.h */,
 				BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */,
+				BE6137B91E75CE3B00B94D6D /* MEHManualEntryViewController.h */,
+				BE6137BA1E75CE3B00B94D6D /* MEHManualEntryViewController.m */,
 				BE05D82F1E74A08500159A80 /* MEHScanViewController.h */,
 				BE05D8301E74A08500159A80 /* MEHScanViewController.m */,
 			);
@@ -294,6 +309,9 @@
 				BE6137B81E75CDC300B94D6D /* MEHUserViewController.m in Sources */,
 				BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */,
 				BEB8DABE1E74C6F6008126FA /* MEHCheckInStoreController.m in Sources */,
+				BE6137C11E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m in Sources */,
+				BE6137BB1E75CE3B00B94D6D /* MEHManualEntryViewController.m in Sources */,
+				BE6137BE1E75D0EB00B94D6D /* AutolayoutHelper.m in Sources */,
 				BE05D82E1E74A08500159A80 /* AppDelegate.m in Sources */,
 				BE05D82B1E74A08500159A80 /* main.m in Sources */,
 				BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */,
