@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F6BF7334378FA18F012B22A /* libPods-Principium.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D58C70ED6E887FBB7E1128 /* libPods-Principium.a */; };
+		9D782DF3FE09A67F60A0E2A2 /* Pods_Principium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E33DEBC528BFFDE2D010F95D /* Pods_Principium.framework */; };
 		BE05D82B1E74A08500159A80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D82A1E74A08500159A80 /* main.m */; };
 		BE05D82E1E74A08500159A80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D82D1E74A08500159A80 /* AppDelegate.m */; };
 		BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8301E74A08500159A80 /* MEHScanViewController.m */; };
@@ -25,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		74D58C70ED6E887FBB7E1128 /* libPods-Principium.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Principium.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F70C0BEE0FB76D96424BAC /* Pods-Principium.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Principium.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Principium/Pods-Principium.debug.xcconfig"; sourceTree = "<group>"; };
 		BE05D8261E74A08500159A80 /* Principium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Principium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE05D82A1E74A08500159A80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		BEB8DAC11E74C722008126FA /* MEHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHUser.h; sourceTree = "<group>"; };
 		BEB8DAC21E74C722008126FA /* MEHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHUser.m; sourceTree = "<group>"; };
 		BEB8DAC51E74E1F0008126FA /* MEHAPIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEHAPIKeys.h; sourceTree = "<group>"; };
+		E33DEBC528BFFDE2D010F95D /* Pods_Principium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Principium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C246CE09A111F22E5FD416 /* Pods-Principium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Principium.release.xcconfig"; path = "Pods/Target Support Files/Pods-Principium/Pods-Principium.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6BF7334378FA18F012B22A /* libPods-Principium.a in Frameworks */,
+				9D782DF3FE09A67F60A0E2A2 /* Pods_Principium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +182,7 @@
 		E33516600C453501483221EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				74D58C70ED6E887FBB7E1128 /* libPods-Principium.a */,
+				E33DEBC528BFFDE2D010F95D /* Pods_Principium.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -20,15 +20,27 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - PageMenu (1.2.9)
 
 DEPENDENCIES:
   - AFNetworking
   - Bolts
+  - PageMenu (from `https://github.com/orazz/PageMenu.git`)
+
+EXTERNAL SOURCES:
+  PageMenu:
+    :git: https://github.com/orazz/PageMenu.git
+
+CHECKOUT OPTIONS:
+  PageMenu:
+    :commit: ace3d8d095c9c165113d3ac797f317fe7faecbae
+    :git: https://github.com/orazz/PageMenu.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
 
-PODFILE CHECKSUM: 739bc005d96ceb6fe3fe97ab74e0c881390da73c
+PODFILE CHECKSUM: 12a1150ba875d0fad21a277ca33d0397946130e3
 
 COCOAPODS: 1.1.1
