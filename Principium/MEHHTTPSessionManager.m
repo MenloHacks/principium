@@ -45,6 +45,7 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
 
 
 - (void)handleError : (NSError *)error {
+    NSLog(@"error = %@", error);
 //    NSInteger code = [[[error userInfo] objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
 //    
 //    NSString *message = nil;

@@ -8,6 +8,8 @@
 
 #import "MEHScanViewController.h"
 
+#import "MEHCheckInStoreController.h"
+
 @import AVFoundation;
 
 @interface MEHScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
@@ -62,6 +64,7 @@
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             NSString *string = metadataObj.stringValue;
+            [[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:string];
 //            [[RESTSessionManager sharedSessionManager]joinSpaceWithIdentifier:string];
             [_captureSession stopRunning];
             

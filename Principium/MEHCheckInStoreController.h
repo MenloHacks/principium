@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class BFTask;
+
 @interface MEHCheckInStoreController : NSObject
 
 + (instancetype)sharedCheckInStoreController;
