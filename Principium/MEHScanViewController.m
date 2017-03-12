@@ -8,7 +8,10 @@
 
 #import "MEHScanViewController.h"
 
+#import "CATransition+MenloHacks.h"
+
 #import "MEHCheckInStoreController.h"
+#import "MEHManualEntryViewController.h"
 
 @import AVFoundation;
 
@@ -25,12 +28,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureNavigationBar];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [self startReading];
 }
 
+
+- (void)configureNavigationBar {
+    UIBarButtonItem *switchVCItem = [[UIBarButtonItem alloc]initWithTitle:@"Manual"
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(switchToManual:)];
+    
+    self.navigationItem.leftBarButtonItem = switchVCItem;
+    
+}
 
 
 -(void)startReading {
@@ -65,7 +79,6 @@
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             NSString *string = metadataObj.stringValue;
             [[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:string];
-//            [[RESTSessionManager sharedSessionManager]joinSpaceWithIdentifier:string];
             [_captureSession stopRunning];
             
             UILabel *accessCodeLabel = [UILabel new];
@@ -125,6 +138,16 @@
 
 -(void)dismissView : (UIBarButtonItem *)barButtonItem {
     [self dismissSelfToNextView:NO];
+}
+
+- (void)switchToManual : (id)sender {
+    
+    CATransition *transition = [CATransition flipTransition];
+    
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    
+    UIViewController *vc = [[MEHManualEntryViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

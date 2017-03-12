@@ -11,10 +11,12 @@
 #import <Bolts/Bolts.h>
 
 #import "AutolayoutHelper.h"
+#import "CATransition+MenloHacks.h"
 #import "UIColor+ColorPalette.h"
 #import "UIFontDescriptor+AvenirNext.h"
 
 #import "MEHCheckInStoreController.h"
+#import "MEHScanViewController.h"
 
 @interface MEHManualEntryViewController () <UITextFieldDelegate>
 
@@ -29,11 +31,23 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor menloHacksPurple];
     [self createViews];
+    [self configureNavigationBar];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)configureNavigationBar {
+    UIBarButtonItem *switchVCItem = [[UIBarButtonItem alloc]initWithTitle:@"Camera"
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(switchToCamera:)];
+    
+    self.navigationItem.leftBarButtonItem = switchVCItem;
+    
 }
 
 
@@ -91,6 +105,16 @@
     return YES;
 }
 
+- (void)switchToCamera : (id)sender {
+    
+    CATransition *transition = [CATransition flipTransition];
+    
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    
+    UIViewController *vc = [[MEHScanViewController alloc]init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end

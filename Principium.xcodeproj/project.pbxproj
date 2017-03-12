@@ -18,6 +18,7 @@
 		BE6137BB1E75CE3B00B94D6D /* MEHManualEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137BA1E75CE3B00B94D6D /* MEHManualEntryViewController.m */; };
 		BE6137BE1E75D0EB00B94D6D /* AutolayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137BD1E75D0EB00B94D6D /* AutolayoutHelper.m */; };
 		BE6137C11E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137C01E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m */; };
+		BE6137C41E760CD200B94D6D /* CATransition+MenloHacks.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137C31E760CD200B94D6D /* CATransition+MenloHacks.m */; };
 		BEB8DABB1E74B9FD008126FA /* MEHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */; };
 		BEB8DABE1E74C6F6008126FA /* MEHCheckInStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */; };
 		BEB8DAC31E74C722008126FA /* MEHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DAC21E74C722008126FA /* MEHUser.m */; };
@@ -45,6 +46,8 @@
 		BE6137BD1E75D0EB00B94D6D /* AutolayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutolayoutHelper.m; sourceTree = "<group>"; };
 		BE6137BF1E75D18100B94D6D /* UIFontDescriptor+AvenirNext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFontDescriptor+AvenirNext.h"; sourceTree = "<group>"; };
 		BE6137C01E75D18100B94D6D /* UIFontDescriptor+AvenirNext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFontDescriptor+AvenirNext.m"; sourceTree = "<group>"; };
+		BE6137C21E760CD200B94D6D /* CATransition+MenloHacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransition+MenloHacks.h"; sourceTree = "<group>"; };
+		BE6137C31E760CD200B94D6D /* CATransition+MenloHacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransition+MenloHacks.m"; sourceTree = "<group>"; };
 		BEB8DAB91E74B9FD008126FA /* MEHHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHHTTPSessionManager.h; sourceTree = "<group>"; };
 		BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHHTTPSessionManager.m; sourceTree = "<group>"; };
 		BEB8DABC1E74C6F6008126FA /* MEHCheckInStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHCheckInStoreController.h; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 		BE05D8281E74A08500159A80 /* Principium */ = {
 			isa = PBXGroup;
 			children = (
+				BE6137C21E760CD200B94D6D /* CATransition+MenloHacks.h */,
+				BE6137C31E760CD200B94D6D /* CATransition+MenloHacks.m */,
 				BE6137BC1E75D0E400B94D6D /* AutolayoutHelper.h */,
 				BE6137BD1E75D0EB00B94D6D /* AutolayoutHelper.m */,
 				BE6137BF1E75D18100B94D6D /* UIFontDescriptor+AvenirNext.h */,
@@ -315,6 +320,7 @@
 				BE05D82E1E74A08500159A80 /* AppDelegate.m in Sources */,
 				BE05D82B1E74A08500159A80 /* main.m in Sources */,
 				BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */,
+				BE6137C41E760CD200B94D6D /* CATransition+MenloHacks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
