@@ -15,6 +15,8 @@
 		BE05D8391E74A08500159A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8371E74A08500159A80 /* LaunchScreen.storyboard */; };
 		BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */; };
 		BEB8DABB1E74B9FD008126FA /* MEHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */; };
+		BEB8DABE1E74C6F6008126FA /* MEHCheckInStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */; };
+		BEB8DAC31E74C722008126FA /* MEHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DAC21E74C722008126FA /* MEHUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorPalette.m"; sourceTree = "<group>"; };
 		BEB8DAB91E74B9FD008126FA /* MEHHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHHTTPSessionManager.h; sourceTree = "<group>"; };
 		BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHHTTPSessionManager.m; sourceTree = "<group>"; };
+		BEB8DABC1E74C6F6008126FA /* MEHCheckInStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHCheckInStoreController.h; sourceTree = "<group>"; };
+		BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHCheckInStoreController.m; sourceTree = "<group>"; };
+		BEB8DAC11E74C722008126FA /* MEHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHUser.h; sourceTree = "<group>"; };
+		BEB8DAC21E74C722008126FA /* MEHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHUser.m; sourceTree = "<group>"; };
 		E5C246CE09A111F22E5FD416 /* Pods-Principium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Principium.release.xcconfig"; path = "Pods/Target Support Files/Pods-Principium/Pods-Principium.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,8 +84,9 @@
 		BE05D8281E74A08500159A80 /* Principium */ = {
 			isa = PBXGroup;
 			children = (
-				BEB8DAB91E74B9FD008126FA /* MEHHTTPSessionManager.h */,
-				BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */,
+				BEB8DAC41E74C725008126FA /* Model */,
+				BEB8DABF1E74C6FB008126FA /* Networking */,
+				BEB8DAC01E74C703008126FA /* StoreController */,
 				BE05D82C1E74A08500159A80 /* AppDelegate.h */,
 				BE05D82D1E74A08500159A80 /* AppDelegate.m */,
 				BE05D8431E74B8B300159A80 /* ViewControllers */,
@@ -116,6 +123,33 @@
 				BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		BEB8DABF1E74C6FB008126FA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8DAB91E74B9FD008126FA /* MEHHTTPSessionManager.h */,
+				BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		BEB8DAC01E74C703008126FA /* StoreController */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8DABC1E74C6F6008126FA /* MEHCheckInStoreController.h */,
+				BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */,
+			);
+			name = StoreController;
+			sourceTree = "<group>";
+		};
+		BEB8DAC41E74C725008126FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BEB8DAC11E74C722008126FA /* MEHUser.h */,
+				BEB8DAC21E74C722008126FA /* MEHUser.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		E33516600C453501483221EF /* Frameworks */ = {
@@ -249,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB8DABB1E74B9FD008126FA /* MEHHTTPSessionManager.m in Sources */,
+				BEB8DAC31E74C722008126FA /* MEHUser.m in Sources */,
 				BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */,
+				BEB8DABE1E74C6F6008126FA /* MEHCheckInStoreController.m in Sources */,
 				BE05D82E1E74A08500159A80 /* AppDelegate.m in Sources */,
 				BE05D82B1E74A08500159A80 /* main.m in Sources */,
 				BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */,
