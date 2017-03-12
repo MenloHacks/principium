@@ -39,6 +39,7 @@
 		BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHCheckInStoreController.m; sourceTree = "<group>"; };
 		BEB8DAC11E74C722008126FA /* MEHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHUser.h; sourceTree = "<group>"; };
 		BEB8DAC21E74C722008126FA /* MEHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHUser.m; sourceTree = "<group>"; };
+		BEB8DAC51E74E1F0008126FA /* MEHAPIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEHAPIKeys.h; sourceTree = "<group>"; };
 		E5C246CE09A111F22E5FD416 /* Pods-Principium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Principium.release.xcconfig"; path = "Pods/Target Support Files/Pods-Principium/Pods-Principium.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +140,7 @@
 			children = (
 				BEB8DABC1E74C6F6008126FA /* MEHCheckInStoreController.h */,
 				BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */,
+				BEB8DAC51E74E1F0008126FA /* MEHAPIKeys.h */,
 			);
 			name = StoreController;
 			sourceTree = "<group>";

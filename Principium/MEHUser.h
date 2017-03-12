@@ -10,6 +10,8 @@
 
 @interface MEHUser : NSObject
 
++ (instancetype)userFromDictionary: (NSDictionary *)dictionary;
+
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *tshirtSize;

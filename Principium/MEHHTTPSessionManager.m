@@ -10,6 +10,10 @@
 
 #import <Bolts/Bolts.h>
 
+#import "MEHAPIKeys.h"
+
+static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
+
 @implementation MEHHTTPSessionManager
 
 + (instancetype)sharedSessionManager {
@@ -30,6 +34,7 @@
         [serializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [serializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         [self setRequestSerializer:serializer];
+        [self setAuthorizationHeader];
         
     }
     return self;
@@ -68,6 +73,10 @@
     
 }
 
+- (void)setAuthorizationHeader {
+    [self.requestSerializer setValue:kMEHAdminAuthenticationKey
+                  forHTTPHeaderField:kMEHAuthorizationHeaderField];
+}
 
 
 #pragma mark networking requests with Bolts

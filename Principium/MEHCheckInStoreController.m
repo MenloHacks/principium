@@ -11,6 +11,7 @@
 #import <Bolts/Bolts.h>
 
 #import "MEHHTTPSessionManager.h"
+#import "MEHUser.h"
 
 @implementation MEHCheckInStoreController
 
@@ -24,8 +25,12 @@
 }
 
 - (BFTask *)checkInUser : (NSString *)username {
-    return [[[MEHHTTPSessionManager sharedSessionManager]POST:@"user/checkin" parameters:nil]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
-        return nil;
+    NSDictionary *parameters = @{@"username" : username};
+    
+    return [[[MEHHTTPSessionManager sharedSessionManager]POST:@"user/checkin" parameters:parameters]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+        NSDictionary *data = t.result[@"data"];
+        MEHUser *user = [MEHUser userFromDictionary:data];
+        return [BFTask taskWithResult:user];
     }];
     
 }

@@ -11,5 +11,6 @@
 @interface MEHCheckInStoreController : NSObject
 
 + (instancetype)sharedCheckInStoreController;
+- (BFTask *)checkInUser : (NSString *)username;
 
 @end
