@@ -14,6 +14,7 @@
 		BE05D8361E74A08500159A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8351E74A08500159A80 /* Assets.xcassets */; };
 		BE05D8391E74A08500159A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8371E74A08500159A80 /* LaunchScreen.storyboard */; };
 		BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */; };
+		BE6137B81E75CDC300B94D6D /* MEHUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */; };
 		BEB8DABB1E74B9FD008126FA /* MEHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */; };
 		BEB8DABE1E74C6F6008126FA /* MEHCheckInStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DABD1E74C6F6008126FA /* MEHCheckInStoreController.m */; };
 		BEB8DAC31E74C722008126FA /* MEHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB8DAC21E74C722008126FA /* MEHUser.m */; };
@@ -33,6 +34,8 @@
 		BE05D83A1E74A08500159A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE05D8401E74B6F900159A80 /* UIColor+ColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorPalette.h"; sourceTree = "<group>"; };
 		BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorPalette.m"; sourceTree = "<group>"; };
+		BE6137B61E75CDC300B94D6D /* MEHUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHUserViewController.h; sourceTree = "<group>"; };
+		BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHUserViewController.m; sourceTree = "<group>"; };
 		BEB8DAB91E74B9FD008126FA /* MEHHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHHTTPSessionManager.h; sourceTree = "<group>"; };
 		BEB8DABA1E74B9FD008126FA /* MEHHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHHTTPSessionManager.m; sourceTree = "<group>"; };
 		BEB8DABC1E74C6F6008126FA /* MEHCheckInStoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHCheckInStoreController.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 		BE05D8431E74B8B300159A80 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE6137B61E75CDC300B94D6D /* MEHUserViewController.h */,
+				BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */,
 				BE05D82F1E74A08500159A80 /* MEHScanViewController.h */,
 				BE05D8301E74A08500159A80 /* MEHScanViewController.m */,
 			);
@@ -286,6 +291,7 @@
 			files = (
 				BEB8DABB1E74B9FD008126FA /* MEHHTTPSessionManager.m in Sources */,
 				BEB8DAC31E74C722008126FA /* MEHUser.m in Sources */,
+				BE6137B81E75CDC300B94D6D /* MEHUserViewController.m in Sources */,
 				BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */,
 				BEB8DABE1E74C6F6008126FA /* MEHCheckInStoreController.m in Sources */,
 				BE05D82E1E74A08500159A80 /* AppDelegate.m in Sources */,
