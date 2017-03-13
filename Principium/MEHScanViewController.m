@@ -8,10 +8,13 @@
 
 #import "MEHScanViewController.h"
 
+#import <Bolts/Bolts.h>
+
 #import "CATransition+MenloHacks.h"
 
 #import "MEHCheckInStoreController.h"
 #import "MEHManualEntryViewController.h"
+#import "Principium-Swift.h"
 
 @import AVFoundation;
 
@@ -56,7 +59,7 @@
         NSLog(@"Chances are this is is being done in the simulator, don't do that.");
         return;
     }
-    self.videoPreviewView = [[UIView alloc]initWithFrame:self.view.frame];
+    self.videoPreviewView = [[UIView alloc]initWithFrame:self.view.layer.bounds];
     [self.view addSubview:self.videoPreviewView];
     _captureSession = [[AVCaptureSession alloc] init];
     [_captureSession addInput:input];
@@ -78,7 +81,14 @@
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             NSString *string = metadataObj.stringValue;
-            [[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:string];
+            [[[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:string]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+                MEHProfileDisplaPageViewController *pageVC = [[MEHProfileDisplaPageViewController alloc]init];
+                pageVC.user = t.result;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController pushViewController:pageVC animated:YES];
+                });
+                return nil;
+            }];
             [_captureSession stopRunning];
             
             UILabel *accessCodeLabel = [UILabel new];
