@@ -35,6 +35,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self startReading];
 }
 
@@ -158,7 +159,7 @@
     [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
     
     UIViewController *vc = [[MEHManualEntryViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 
 
