@@ -11,7 +11,6 @@
 #import "UIColor+ColorPalette.h"
 
 #import "MEHScanViewController.h"
-#import "MEHManualEntryViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,10 +24,9 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
     
-   // MEHScanViewController *scanVC = [[MEHScanViewController alloc]init];
-    MEHManualEntryViewController *manualVC = [[MEHManualEntryViewController alloc]init];
+   MEHScanViewController *scanVC = [[MEHScanViewController alloc]init];
     
-    UINavigationController* navController = [[UINavigationController alloc]initWithRootViewController:manualVC];
+    UINavigationController* navController = [[UINavigationController alloc]initWithRootViewController:scanVC];
     navController.navigationBar.tintColor = [UIColor menloHacksPurple];
     navController.navigationBar.topItem.titleView = [[UIImageView alloc]initWithImage:
                                                      [UIImage imageNamed:@"menlohacks_nav"]];
