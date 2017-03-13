@@ -11,6 +11,7 @@
 #import <Bolts/Bolts.h>
 
 #import "CATransition+MenloHacks.h"
+#import "UIView+MenloHacks.h"
 
 #import "MEHCheckInStoreController.h"
 #import "MEHManualEntryViewController.h"
@@ -47,7 +48,7 @@
                                                                    action:@selector(switchToManual:)];
     
     self.navigationItem.leftBarButtonItem = switchVCItem;
-    
+    self.navigationItem.titleView = [UIView navigationTitleView];
 }
 
 

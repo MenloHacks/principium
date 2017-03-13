@@ -14,6 +14,7 @@
 		BE05D8361E74A08500159A80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8351E74A08500159A80 /* Assets.xcassets */; };
 		BE05D8391E74A08500159A80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE05D8371E74A08500159A80 /* LaunchScreen.storyboard */; };
 		BE05D8421E74B6F900159A80 /* UIColor+ColorPalette.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */; };
+		BE607E061E7666A200F7D5E2 /* UIView+MenloHacks.m in Sources */ = {isa = PBXBuildFile; fileRef = BE607E051E7666A200F7D5E2 /* UIView+MenloHacks.m */; };
 		BE6137B81E75CDC300B94D6D /* MEHUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */; };
 		BE6137BB1E75CE3B00B94D6D /* MEHManualEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137BA1E75CE3B00B94D6D /* MEHManualEntryViewController.m */; };
 		BE6137BE1E75D0EB00B94D6D /* AutolayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6137BD1E75D0EB00B94D6D /* AutolayoutHelper.m */; };
@@ -39,6 +40,8 @@
 		BE05D83A1E74A08500159A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE05D8401E74B6F900159A80 /* UIColor+ColorPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorPalette.h"; sourceTree = "<group>"; };
 		BE05D8411E74B6F900159A80 /* UIColor+ColorPalette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorPalette.m"; sourceTree = "<group>"; };
+		BE607E041E7666A200F7D5E2 /* UIView+MenloHacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MenloHacks.h"; sourceTree = "<group>"; };
+		BE607E051E7666A200F7D5E2 /* UIView+MenloHacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MenloHacks.m"; sourceTree = "<group>"; };
 		BE6137B61E75CDC300B94D6D /* MEHUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHUserViewController.h; sourceTree = "<group>"; };
 		BE6137B71E75CDC300B94D6D /* MEHUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHUserViewController.m; sourceTree = "<group>"; };
 		BE6137B91E75CE3B00B94D6D /* MEHManualEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHManualEntryViewController.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				BEB8DAC01E74C703008126FA /* StoreController */,
 				BE05D82C1E74A08500159A80 /* AppDelegate.h */,
 				BE05D82D1E74A08500159A80 /* AppDelegate.m */,
+				BE607E041E7666A200F7D5E2 /* UIView+MenloHacks.h */,
+				BE607E051E7666A200F7D5E2 /* UIView+MenloHacks.m */,
 				BE05D8431E74B8B300159A80 /* ViewControllers */,
 				BE05D8441E74B8BD00159A80 /* Utilities */,
 				BE05D8351E74A08500159A80 /* Assets.xcassets */,
@@ -323,6 +328,7 @@
 				BEB8DABB1E74B9FD008126FA /* MEHHTTPSessionManager.m in Sources */,
 				BE6137CA1E7619EF00B94D6D /* MEHFormViewController.m in Sources */,
 				BE6137C71E76192700B94D6D /* MEHProfileDisplayPageViewController.swift in Sources */,
+				BE607E061E7666A200F7D5E2 /* UIView+MenloHacks.m in Sources */,
 				BEB8DAC31E74C722008126FA /* MEHUser.m in Sources */,
 				BE6137B81E75CDC300B94D6D /* MEHUserViewController.m in Sources */,
 				BE05D8311E74A08500159A80 /* MEHScanViewController.m in Sources */,

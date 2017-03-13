@@ -14,6 +14,7 @@
 #import "CATransition+MenloHacks.h"
 #import "UIColor+ColorPalette.h"
 #import "UIFontDescriptor+AvenirNext.h"
+#import "UIView+MenloHacks.h"
 
 #import "Principium-Swift.h"
 #import "MEHCheckInStoreController.h"
@@ -54,6 +55,7 @@
                                                                    action:@selector(switchToCamera:)];
     
     self.navigationItem.leftBarButtonItem = switchVCItem;
+    self.navigationItem.titleView = [UIView navigationTitleView];
     
 }
 

@@ -5,6 +5,7 @@
 
 #import "CATransition+MenloHacks.h"
 #import "UIColor+ColorPalette.h"
+#import "UIView+MenloHacks.h"
 
 #import "MEHUser.h"
 #import "MEHFormViewController.h"

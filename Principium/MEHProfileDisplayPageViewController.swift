@@ -48,6 +48,8 @@ import FCAlertView
     
     override func viewDidLoad(){
         
+        self.navigationItem.titleView = UIView.navigationTitleView() as! UIView?
+        
         liabilityVC.title = "Liability"
         photoVC.title = "Photo"
         infoVC.title = "Profile"

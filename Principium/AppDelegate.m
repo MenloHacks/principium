@@ -28,8 +28,7 @@
     
     UINavigationController* navController = [[UINavigationController alloc]initWithRootViewController:scanVC];
     navController.navigationBar.tintColor = [UIColor menloHacksPurple];
-    navController.navigationBar.topItem.titleView = [[UIImageView alloc]initWithImage:
-                                                     [UIImage imageNamed:@"menlohacks_nav"]];
+
     navController.navigationBar.translucent = NO;
     _window.rootViewController = navController;
 
