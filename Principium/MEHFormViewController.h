@@ -1,5 +1,5 @@
 //
-//  MEHUserViewController.h
+//  MEHFormViewController.h
 //  Principium
 //
 //  Created by Jason Scharff on 3/12/17.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MEHUserViewController : UIViewController
+@interface MEHFormViewController : UIViewController
+
+@property (nonatomic) NSURL *url;
 
 
 @end

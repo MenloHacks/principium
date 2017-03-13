@@ -15,6 +15,7 @@
 #import "UIColor+ColorPalette.h"
 #import "UIFontDescriptor+AvenirNext.h"
 
+#import "Principium-Swift.h"
 #import "MEHCheckInStoreController.h"
 #import "MEHScanViewController.h"
 
@@ -92,6 +93,12 @@
         //Show error;
     } else {
         [[[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:self.textField.text]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+            MEHProfileDisplaPageViewController *pageVC = [[MEHProfileDisplaPageViewController alloc]init];
+            pageVC.user = t.result;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.navigationController pushViewController:pageVC animated:YES];
+            });
+                                                        
             return nil;
             
         }];
