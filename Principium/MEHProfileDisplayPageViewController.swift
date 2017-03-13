@@ -63,7 +63,17 @@ import PageMenu
         self.view.addSubview(pageMenu.view)
         self.addChildViewController(pageMenu)
         
+        self.navigationItem.hidesBackButton = true
+        
+        let nextButton = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(MEHProfileDisplaPageViewController.returnToRoot(sender:)))
+        self.navigationItem.rightBarButtonItem = nextButton
+        
+        
     }
     
-    
+    func returnToRoot(sender: AnyObject) {
+        let transition = CATransition.flip()
+        self.navigationController?.view.layer.add(transition!, forKey: kCATransition)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
