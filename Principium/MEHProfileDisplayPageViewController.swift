@@ -9,13 +9,32 @@
 import Foundation
 import UIKit
 import PageMenu
-
+import FCAlertView
 
 
 @objc class MEHProfileDisplaPageViewController : UIViewController {
     
     var user : MEHUser? {
         didSet {
+            if(user?.liabilityURL == nil ||
+                user?.liabilityURL.absoluteString == "" ||
+                user?.photoFormURL == nil ||
+                user?.photoFormURL.absoluteString == "") {
+                
+                let alert = FCAlertView()
+                alert.dismissOnOutsideTouch = true
+                
+                alert.showAlert(withTitle: "Error",
+                                withSubtitle: "User is missing one or more forms",
+                                withCustomImage: nil
+                    , withDoneButtonTitle: nil,
+                      andButtons: nil)
+                
+                alert.makeAlertTypeWarning()
+                
+                
+                
+            }
             liabilityVC.url = user?.liabilityURL
             photoVC.url = user?.photoFormURL
             infoVC.user = user

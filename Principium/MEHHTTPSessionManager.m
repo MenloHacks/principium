@@ -50,7 +50,6 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
 - (void)handleError : (NSError *)error {
     NSLog(@"error = %@", error);
     FCAlertView *alert = [[FCAlertView alloc] init];
-    alert.colorScheme = [UIColor menloHacksPurple];
     alert.dismissOnOutsideTouch = YES;
     
     NSDictionary *jsonDictionary = [NSJSONSerialization
@@ -67,15 +66,15 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
     }
     
     
-    [alert showAlertWithTitle:title
-                 withSubtitle:message
-              withCustomImage:nil
-          withDoneButtonTitle:nil
-                   andButtons:nil];
     
     
         //Wait for a short second for UI
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [alert showAlertWithTitle:title
+                         withSubtitle:message
+                      withCustomImage:nil
+                  withDoneButtonTitle:nil
+                           andButtons:nil];
             [alert makeAlertTypeWarning];
         });
     
