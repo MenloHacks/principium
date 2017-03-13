@@ -20,11 +20,13 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - FCAlertView (1.3.1)
   - PageMenu (1.2.9)
 
 DEPENDENCIES:
   - AFNetworking
   - Bolts
+  - FCAlertView
   - PageMenu (from `https://github.com/orazz/PageMenu.git`)
 
 EXTERNAL SOURCES:
@@ -39,8 +41,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FCAlertView: 083c067bfd98f147abf5a66fe0e31cefac7bc809
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
 
-PODFILE CHECKSUM: 12a1150ba875d0fad21a277ca33d0397946130e3
+PODFILE CHECKSUM: 400d8a99157b3edd8796b17a6885be862cfcef9a
 
 COCOAPODS: 1.1.1

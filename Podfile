@@ -6,9 +6,8 @@ target 'Principium' do
   use_frameworks!
   pod 'PageMenu', :git => 'https://github.com/orazz/PageMenu.git'
 
-  # Pods for Principium
-
   pod 'Bolts'
   pod 'AFNetworking'
+  pod 'FCAlertView'
 
 end
