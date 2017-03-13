@@ -9,6 +9,9 @@
 #import "MEHHTTPSessionManager.h"
 
 #import <Bolts/Bolts.h>
+#import "FCAlertView.h"
+
+#import "UIColor+ColorPalette.h"
 
 #import "MEHAPIKeys.h"
 
@@ -46,31 +49,37 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
 
 - (void)handleError : (NSError *)error {
     NSLog(@"error = %@", error);
-//    NSInteger code = [[[error userInfo] objectForKey:AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
-//    
-//    NSString *message = nil;
-//    NSString *title = @"An error has occurred";
-//    
-//    if(code >=400 && code < 500) {
-//        if(code == kMEHAuthenticationFailedCode) {
-//            [[MEHUserStoreController sharedUserStoreController]logout];
-//        }
-//        NSDictionary *jsonDictionary = [NSJSONSerialization
-//                                        JSONObjectWithData:error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
-//                                        options:0
-//                                        error:&error];
-//        if (jsonDictionary[@"error"]) {
-//            message = jsonDictionary[@"error"][@"message"];
-//            title = jsonDictionary[@"error"][@"title"];
-//        }
-//    }
-//    
-//    //Wait to give an adequate amount of time
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        SCLAlertView *alert = [[SCLAlertView alloc]initWithNewWindow];
-//        [alert showError:title subTitle:message closeButtonTitle:@"OK" duration:0];
-//    });
-//    
+    FCAlertView *alert = [[FCAlertView alloc] init];
+    alert.colorScheme = [UIColor menloHacksPurple];
+    alert.dismissOnOutsideTouch = YES;
+    
+    NSDictionary *jsonDictionary = [NSJSONSerialization
+                                            JSONObjectWithData:error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
+                                            options:0
+                                            error:&error];
+    
+    NSString *message = nil;
+    NSString *title = @"An error has occurred";
+    
+    if (jsonDictionary[@"error"]) {
+        message = jsonDictionary[@"error"][@"message"];
+        title = jsonDictionary[@"error"][@"title"];
+    }
+    
+    
+    [alert showAlertWithTitle:title
+                 withSubtitle:message
+              withCustomImage:nil
+          withDoneButtonTitle:nil
+                   andButtons:nil];
+    
+    
+        //Wait for a short second for UI
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [alert makeAlertTypeWarning];
+        });
+    
+
     
 }
 
