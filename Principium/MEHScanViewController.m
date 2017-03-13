@@ -127,7 +127,8 @@
                     [self.view layoutIfNeeded];
                     accessCodeLabel.transform = CGAffineTransformScale(accessCodeLabel.transform, 0.35, 0.35);
                 } completion:^(BOOL finished) {
-//                    [self dismissSelfToNextView:self.didJoinSpace];
+                    //if it hasn't finished by now there's clearly an issue so we'll start reading again.
+                    [self startReading];
                 }];
             });
         }
