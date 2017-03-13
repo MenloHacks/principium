@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class MEHUser;
+
 @interface MEHUserViewController : UIViewController
 
+@property (nonatomic, strong) MEHUser *user;
 
 @end

@@ -18,6 +18,7 @@ import PageMenu
         didSet {
             liabilityVC.url = user?.liabilityURL
             photoVC.url = user?.photoFormURL
+            infoVC.user = user
         }
     }
     
@@ -32,7 +33,7 @@ import PageMenu
         photoVC.title = "Photo"
         infoVC.title = "Profile"
         
-        let controllers = [infoVC, photoVC, liabilityVC]
+        let controllers = [infoVC, liabilityVC, photoVC]
         
         // Initialize page menu with controller array, frame, and optional parameters
         
