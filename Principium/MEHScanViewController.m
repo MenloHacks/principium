@@ -79,16 +79,24 @@
 }
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
+    dispatch_async(dispatch_get_main_queue(), ^{
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             NSString *string = metadataObj.stringValue;
-            [[[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:string]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
-                MEHProfileDisplaPageViewController *pageVC = [[MEHProfileDisplaPageViewController alloc]init];
-                pageVC.user = t.result;
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.navigationController pushViewController:pageVC animated:YES];
+            [[[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:string]continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
+                NSLog(@"stop running");
+                if(!t.error) {
+                    MEHProfileDisplaPageViewController *pageVC = [[MEHProfileDisplaPageViewController alloc]init];
+                    pageVC.user = t.result;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.navigationController pushViewController:pageVC animated:YES];
+                    });
+                }
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                     [self startReading];
                 });
+               
                 return nil;
             }];
             [_captureSession stopRunning];
@@ -119,7 +127,7 @@
                                                                        attribute:NSLayoutAttributeCenterY
                                                                       multiplier:1
                                                                         constant:0];
-            dispatch_async(dispatch_get_main_queue(), ^{
+            
                 [self.view addSubview:accessCodeLabel];
                 [self.view addConstraint:centerX];
                 [self.view addConstraint:centerY];
@@ -129,12 +137,11 @@
                     [self.view layoutIfNeeded];
                     accessCodeLabel.transform = CGAffineTransformScale(accessCodeLabel.transform, 0.35, 0.35);
                 } completion:^(BOOL finished) {
-                    //if it hasn't finished by now there's clearly an issue so we'll start reading again.
-                    [self startReading];
+                  
                 }];
-            });
         }
     }
+         });
 }
 
 -(void)dismissSelfToNextView: (BOOL)continueToNextView{
