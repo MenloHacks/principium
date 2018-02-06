@@ -14,5 +14,6 @@
 
 + (instancetype)sharedCheckInStoreController;
 - (BFTask *)checkInUser : (NSString *)username;
+- (BFTask *)checkOutUser : (NSString *)username;
 
 @end

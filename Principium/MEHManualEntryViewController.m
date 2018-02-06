@@ -16,14 +16,16 @@
 #import "UIFontDescriptor+AvenirNext.h"
 #import "UIView+MenloHacks.h"
 
+#import "FCAlertView.h"
 #import "Principium-Swift.h"
 #import "MEHCheckInStoreController.h"
 #import "MEHScanViewController.h"
 
-@interface MEHManualEntryViewController () <UITextFieldDelegate>
+@interface MEHManualEntryViewController ()
 
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UIButton *checkInButton;
+@property (nonatomic, strong) UIButton *checkOutButton;
 
 @end
 
@@ -76,22 +78,34 @@
     self.textField.keyboardType = UIKeyboardTypeEmailAddress;
     self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
     self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.textField.delegate = self;
-    self.textField.returnKeyType = UIReturnKeyGo;
+    self.textField.returnKeyType = UIReturnKeyDone;
     
     
     self.checkInButton = [UIButton new];
     [self.checkInButton setTitle:@"Check-in" forState:UIControlStateNormal];
     [self.checkInButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.checkInButton.titleLabel.font = font;
+    
+    
     [self.checkInButton addTarget:self
                            action:@selector(checkInPressed:)
                  forControlEvents:UIControlEventTouchDown];
+    
+    
+    self.checkOutButton = [UIButton new];
+    [self.checkOutButton setTitle:@"Check-out" forState:UIControlStateNormal];
+    [self.checkOutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.checkOutButton addTarget:self
+                            action:@selector(checkOutPressed:)
+                  forControlEvents:UIControlEventTouchDown];
+    
+    
     [AutolayoutHelper configureView:self.view
-                           subViews:NSDictionaryOfVariableBindings(_textField, _checkInButton)
+                           subViews:NSDictionaryOfVariableBindings(_textField, _checkInButton, _checkOutButton)
                         constraints:@[@"H:|-[_textField]-|",
                                       @"X: _checkInButton.centerX == superview.centerX",
-                                      @"V:|-30-[_textField]-50-[_checkInButton]"]];
+                                      @"X: _checkOutButton.centerX == _checkInButton.centerX",
+                                      @"V:|-30-[_textField]-50-[_checkInButton]-8-[_checkOutButton]"]];
     
     
     
@@ -99,12 +113,17 @@
 
 - (void)checkInPressed : (id)sender {
     if([self.textField.text isEqualToString:@""]) {
-        //Show error;
+        [self showEmptyTextWarning];
     } else {
+        self.checkOutButton.enabled = NO;
+        self.checkInButton.enabled = NO;
         [[[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:self.textField.text]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
             MEHProfileDisplaPageViewController *pageVC = [[MEHProfileDisplaPageViewController alloc]init];
             pageVC.user = t.result;
             dispatch_async(dispatch_get_main_queue(), ^{
+                self.checkOutButton.enabled = YES;
+                self.checkInButton.enabled = YES;
+                self.textField.text = @"";
                 [self.navigationController pushViewController:pageVC animated:YES];
             });
                                                         
@@ -115,11 +134,51 @@
         
     }
 }
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self checkInPressed:nil];
-    return YES;
+    
+    
+- (void)checkOutPressed : (id)sender {
+        if([self.textField.text isEqualToString:@""]) {
+            [self showEmptyTextWarning];
+        } else {
+            self.checkOutButton.enabled = NO;
+            self.checkInButton.enabled = NO;
+            [[[MEHCheckInStoreController sharedCheckInStoreController]checkOutUser:self.textField.text]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    FCAlertView *alert = [[FCAlertView alloc]init];
+                    alert.dismissOnOutsideTouch = YES;
+                    alert.autoHideSeconds = 5;
+                    [alert showAlertWithTitle:@"User has been checked out."
+                                 withSubtitle:nil
+                              withCustomImage:nil
+                          withDoneButtonTitle:@"Ok"
+                                   andButtons:nil];
+                    [alert makeAlertTypeSuccess];
+                    self.checkOutButton.enabled = YES;
+                    self.checkInButton.enabled = YES;
+                    self.textField.text = @"";
+                });
+                
+                return nil;
+                
+            }];
+            
+            
+        }
 }
+    
+- (void)showEmptyTextWarning {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        FCAlertView *alert = [[FCAlertView alloc]init];
+        [alert showAlertWithTitle:@"Email is empty."
+                     withSubtitle:nil
+                  withCustomImage:nil
+              withDoneButtonTitle:@"Ok"
+                       andButtons:nil];
+        [alert makeAlertTypeWarning];
+    });
+}
+    
 
 - (void)switchToCamera : (id)sender {
     
