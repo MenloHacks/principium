@@ -38,6 +38,11 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self startReading];
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [_captureSession stopRunning];
 }
 
 
@@ -53,6 +58,7 @@
 
 
 -(void)startReading {
+    NSLog(@"start reading");
     NSError *error;
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
@@ -84,6 +90,7 @@
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             NSString *string = metadataObj.stringValue;
+            [_captureSession stopRunning];
             [[[MEHCheckInStoreController sharedCheckInStoreController]checkInUser:string]continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
                 NSLog(@"stop running");
                 if(!t.error) {
@@ -94,12 +101,12 @@
                     });
                 }
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                     [self startReading];
+                    [self startReading];
                 });
                
                 return nil;
             }];
-            [_captureSession stopRunning];
+         
             
             UILabel *accessCodeLabel = [UILabel new];
             accessCodeLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:30];
@@ -161,6 +168,7 @@
 }
 
 - (void)switchToManual : (id)sender {
+
     
     CATransition *transition = [CATransition flipTransition];
     
