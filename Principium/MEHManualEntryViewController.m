@@ -164,7 +164,7 @@
             }];
             
             
-        }
+    }
 }
     
 - (void)showEmptyTextWarning {
