@@ -47,11 +47,14 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
 #pragma mark error handling
 
 
-- (void)handleError : (NSError *)error {
+- (BFTask *)handleError : (NSError *)error {
+    BFTaskCompletionSource *completionSource = [BFTaskCompletionSource taskCompletionSource];
     NSLog(@"error = %@", error);
     FCAlertView *alert = [[FCAlertView alloc] init];
     alert.dismissOnOutsideTouch = YES;
     
+    
+    NSError *jsonError;
     NSDictionary *jsonDictionary = [NSJSONSerialization
                                             JSONObjectWithData:error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]
                                             options:0
@@ -59,27 +62,29 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
     
     NSString *message = nil;
     NSString *title = @"An error has occurred";
-    
-    if (jsonDictionary[@"error"]) {
-        message = jsonDictionary[@"error"][@"message"];
-        title = jsonDictionary[@"error"][@"title"];
+    if(jsonError == nil) {
+        if (jsonDictionary[@"error"]) {
+            message = jsonDictionary[@"error"][@"message"];
+            title = jsonDictionary[@"error"][@"title"];
+        }
     }
     
-    
-    
-    
-        //Wait for a short second for UI
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [alert showAlertWithTitle:title
-                         withSubtitle:message
-                      withCustomImage:nil
+    //Wait for a short second for UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [alert showAlertWithTitle:title
+                     withSubtitle:message
+                  withCustomImage:nil
                   withDoneButtonTitle:nil
                            andButtons:nil];
             [alert makeAlertTypeWarning];
         });
     
-
+    [alert doneActionBlock:^{
+        [completionSource setError:error];
+    }];
     
+    return completionSource.task;
+
 }
 
 - (void)setAuthorizationHeader {
@@ -99,8 +104,11 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
       success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
           [completionSource setResult:responseObject];
       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-          [self handleError:error];
-          [completionSource setError:error];
+          [[self handleError:error]continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
+              [completionSource setError:t.error];
+              return nil;
+          }];
+
       }];
     
     return completionSource.task;
@@ -116,8 +124,10 @@ static NSString * kMEHAuthorizationHeaderField = @"X-MenloHacks-Admin";
     [self POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [completionSource setResult:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [self handleError:error];
-        [completionSource setError:error];
+        [[self handleError:error]continueWithBlock:^id _Nullable(BFTask * _Nonnull t) {
+            [completionSource setError:t.error];
+            return nil;
+        }];
     }];
     
     return completionSource.task;

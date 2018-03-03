@@ -35,4 +35,10 @@
     
 }
 
+- (BFTask *)checkOutUser : (NSString *)username {
+    NSDictionary *parameters = @{@"username" : username};
+    return [[MEHHTTPSessionManager sharedSessionManager]POST:@"user/checkout" parameters:parameters];
+}
+
+
 @end
