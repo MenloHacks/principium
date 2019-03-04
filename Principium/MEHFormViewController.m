@@ -12,7 +12,7 @@
 
 @import WebKit;
 
-@interface MEHFormViewController ()
+@interface MEHFormViewController () <WKNavigationDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 
@@ -45,6 +45,7 @@
     [super viewDidLoad];
     
     self.webView = [[WKWebView alloc]init];
+    self.webView.navigationDelegate = self;
     if(self.url) {
         //Force loading of web view.
         self.url = self.url;
@@ -55,12 +56,31 @@
     // Do any additional setup after loading the view.
 }
 
+//iOS 12 bug when switching VCs
+//Delete this when Apple fixes the bug...eventually?
+//https://stackoverflow.com/questions/52735158/wkwebview-shows-gray-background-and-pdf-content-gets-invisible-on-viewcontroller
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if(self.url) {
+        [self setUrl:self.url];
+    }
+}
+
 - (void)setUrl:(NSURL *)url {
     _url = url;
     if(self.webView) {
+        NSURL *pdf = [NSURL URLWithString:@"https://cdn.filestackcontent.com/71yeKXr1RY6wHdRrfEXs"];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];
     }
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    NSLog(@"did finish");
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    NSLog(@"fail");
 }
 
 @end
