@@ -12,7 +12,7 @@
 
 @import WebKit;
 
-@interface MEHFormViewController () <WKNavigationDelegate>
+@interface MEHFormViewController ()
 
 @property (nonatomic, strong) WKWebView *webView;
 
@@ -69,18 +69,9 @@
 - (void)setUrl:(NSURL *)url {
     _url = url;
     if(self.webView) {
-        NSURL *pdf = [NSURL URLWithString:@"https://cdn.filestackcontent.com/71yeKXr1RY6wHdRrfEXs"];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];
     }
-}
-
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    NSLog(@"did finish");
-}
-
-- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    NSLog(@"fail");
 }
 
 @end
