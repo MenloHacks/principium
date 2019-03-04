@@ -1,6 +1,6 @@
 {
   "name": "PageMenu",
-  "version": "1.2.9",
+  "version": "1.3.0",
   "summary": "A paging menu controller built from other view controllers allowing the user to switch between any kind of view controller.",
   "homepage": "https://github.com/uacaps/PageMenu",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/uacaps/PageMenu.git",
-    "tag": "1.2.9"
+    "tag": "1.3.0"
   },
   "platforms": {
     "ios": "8.0"

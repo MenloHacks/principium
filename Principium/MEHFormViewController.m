@@ -45,6 +45,7 @@
     [super viewDidLoad];
     
     self.webView = [[WKWebView alloc]init];
+    self.webView.navigationDelegate = self;
     if(self.url) {
         //Force loading of web view.
         self.url = self.url;
@@ -53,6 +54,16 @@
     [AutolayoutHelper configureView:self.view fillWithSubView:self.webView];
     
     // Do any additional setup after loading the view.
+}
+
+//iOS 12 bug when switching VCs
+//Delete this when Apple fixes the bug...eventually?
+//https://stackoverflow.com/questions/52735158/wkwebview-shows-gray-background-and-pdf-content-gets-invisible-on-viewcontroller
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if(self.url) {
+        [self setUrl:self.url];
+    }
 }
 
 - (void)setUrl:(NSURL *)url {

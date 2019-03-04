@@ -14,7 +14,7 @@ import FCAlertView
 
 @objc class MEHProfileDisplaPageViewController : UIViewController {
     
-    var user : MEHUser? {
+    @objc var user : MEHUser? {
         didSet {
             if(user?.liabilityURL == nil ||
                 user?.liabilityURL.absoluteString == "" ||
@@ -82,7 +82,7 @@ import FCAlertView
         // Lastly add page menu as subview of base view controller view
         // or use pageMenu controller in you view hierachy as desired
         self.view.addSubview(pageMenu.view)
-        self.addChildViewController(pageMenu)
+        self.addChild(pageMenu)
         
         self.navigationItem.hidesBackButton = true
         
@@ -92,7 +92,7 @@ import FCAlertView
         
     }
     
-    func returnToRoot(sender: AnyObject) {
+    @objc func returnToRoot(sender: AnyObject) {
         let transition = CATransition.flip()
         self.navigationController?.view.layer.add(transition!, forKey: kCATransition)
         self.navigationController?.popToRootViewController(animated: true)
